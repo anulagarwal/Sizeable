@@ -10,7 +10,6 @@ public class ObjectSelector : MonoBehaviour
 
     [Header("Component Reference")]
     [SerializeField] private PropHandler propHandler = null;
-    [SerializeField] private ObjectScaler objectScaler = null;
     #endregion
 
     #region MonoBehaviour Functions

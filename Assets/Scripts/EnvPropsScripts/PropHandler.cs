@@ -7,6 +7,7 @@ public class PropHandler : MonoBehaviour
     #region Properties
     [Header("Component Reference")]
     [SerializeField] private MeshRenderer meshRenderer = null;
+    [SerializeField] private ObjectSelector objectSelector = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -23,6 +24,11 @@ public class PropHandler : MonoBehaviour
         {
             meshRenderer.material.SetFloat("_Highlight", 0f);
         }
+    }
+
+    public void DisableObjectSelection()
+    {
+        objectSelector.ObjectSelected = false;
     }
     #endregion
 }

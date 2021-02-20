@@ -6,6 +6,8 @@ public class LevelManager : MonoBehaviour
 {
     #region Properties
     public static LevelManager Instance = null;
+
+    private List<float> ObjectScales = new List<float>() { 0.25f, 0.5f, 1, 2f, 3f };
     #endregion
 
     #region MonoBehaviour Functions
@@ -21,6 +23,8 @@ public class LevelManager : MonoBehaviour
 
     #region Getter And Setter
     public PropHandler ActiveObjectPropHandler { get; set; }
+
+    public List<float> GetObjectScales { get => ObjectScales; }
     #endregion
 
     #region Public Core Functions
@@ -29,6 +33,7 @@ public class LevelManager : MonoBehaviour
         if (ActiveObjectPropHandler)
         {
             ActiveObjectPropHandler.EnableObjectHighlight(false);
+            ActiveObjectPropHandler.DisableObjectSelection();
             ActiveObjectPropHandler = null;
         }
     }
